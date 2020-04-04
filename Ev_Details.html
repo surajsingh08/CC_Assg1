@@ -1,0 +1,21 @@
+<fieldset>
+<h1>{{ car.name }}</h1>
+<p>Name : {{ car.manufacturer }}</p>
+<p>Year : {{ car.year }}</p>
+<p>Battery : {{ car.battery_size }}</p>
+<p>WLTP Range : {{ car.wltp_range }}</p>
+<p>Cost : {{ car.cost }}</p>
+<p>Power : {{ car.power }}</p>
+<p>Average Rating : {{ avg_rating }}</p>
+</fieldset>
+
+<fieldset>
+<p><a href="/">HomePage</a></p>
+{% for review in Car_reviews %}
+    <p>
+        <p><h3>{{ review.car_name }}</h3>
+        <p>Review : <br>{{ review.car_review }}</p>
+        <p>Rating : <br>{{ review.rating }}</p>
+        <p>By : <br>{{ review.user }}</p>
+{% endfor %}
+</fieldset>

@@ -10,7 +10,8 @@ from search import *
 from Edit import Details
 from compare import Compare
 from review import Review
-from datetime import datetime
+from EV_Details import Ev_Info
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
                                         extensions=["jinja2.ext.autoescape"],autoescape=True)
@@ -31,7 +32,7 @@ class MainPage(webapp2.RequestHandler):
                 user_credentials.email = user.email()
                 user_credentials.put()
             else:
-                Message = "Welcome back"
+                Message = "Welcome To Application"
             url_string = "logout"
         else:
             url = users.create_login_url(self.request.uri)
@@ -50,7 +51,7 @@ app = webapp2.WSGIApplication([
 ('/search', Search),
 ('/details', Details),
 ('/compare', Compare),
-('/review', Review)
-
-
-])
+('/review', Review),
+('/evinfo', Ev_Info),
+('/EV_Details',Ev_Info)
+],debug = True)
