@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>User login/logout</title>
+</head>
+<body>
+    {% if user %}
+        <p>Hello {{ user.email() }}</p>
+        <p>{{ Message }}</p>
+    {% else %}
+        <p>Hello guest welcome to the application</p>
+    {% endif %}
+    <p>you can {{ url_string }} <a href='{{ url }}'>here</a></p>
+    {% if user %}
+            <p><a href="add">add</p>
+        {% endif %}
+
+
+</body>
+</html>
