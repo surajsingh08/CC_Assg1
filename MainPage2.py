@@ -5,6 +5,7 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 from Db_Structure import *
 from EV import *
+
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
                                         extensions=["jinja2.ext.autoescape"],autoescape=True)
 

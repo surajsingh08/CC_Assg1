@@ -1,7 +1,7 @@
 <h1>Search</h1>
+<fieldset>
 <form method="post" action="/search">
     <p>String : <input type="text" name="string_filter"></p>
-    <p>
         category :
             <select name="category">
                 <option value="" default>--select--</option>
@@ -11,13 +11,13 @@
                 <option value="cost">cost</option>
                 <option value="power">power</option>
             </select>
-        <p>low : <input type="number" name="low"></p>
-        <p>high : <input type="number" name="high"></p>
-    </p>
+        <p>MIN : <input type="number" name="MIN"></p>
+        <p>MAX : <input type="number" name="MAX"></p>
 
     <input type="submit" value="Search">
 </form>
+</fieldset>
 
 {% for car in cars %}
-    <p><a href="/info?car={{ car.key.id() }}">{{ car.name }} {{ car.year }} {{ car.manufacturer }}</a></p>
+    <p><a href="/details?car={{ car.key.id() }}">{{ car.name }} {{ car.year }} {{ car.manufacturer }}</a></p>
 {% endfor %}

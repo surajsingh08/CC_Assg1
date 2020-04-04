@@ -7,6 +7,7 @@ from Db_Structure import *
 from EV import *
 from MainPage2 import Page2
 from search import *
+from Edit import Details
 
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
                                         extensions=["jinja2.ext.autoescape"],autoescape=True)
@@ -32,12 +33,19 @@ class MainPage(webapp2.RequestHandler):
         else:
             url = users.create_login_url(self.request.uri)
             url_string = "login"
-        template_values = { "url" : url, "url_string" : url_string, "user" : user, "Message" : Message}
+        template_values = {
+        "url" : url,
+        "url_string" : url_string,
+        "user" : user,
+        "Message" : Message
+        }
         template = JINJA_ENVIRONMENT.get_template("Main.html")
         self.response.write(template.render(template_values))
 app = webapp2.WSGIApplication([
 ('/',MainPage),
 ('/add', Page2),
-('/search', Search)
+('/search', Search),
+('/details', Details)
+
 
 ])

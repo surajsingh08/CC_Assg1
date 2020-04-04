@@ -1,0 +1,14 @@
+<h1>EV</h1>
+<fieldset>
+<form method="post" action="/details?car={{ car.key.id() }}">
+    <p>Name : <input type="text" name="name" value="{{ car.name }}"></p>
+    <p>Manufacturer : <input type="text" name="manufacturer" value="{{ car.manufacturer }}"></p>
+    <p>Year : <input type="number" name="year" value={{ car.year }}></p>
+    <p>Battery Size : <input type="number" name="battery" value={{ car.battery_size }}></p>
+    <p>Wltp range : <input type="number" name="wltp" value={{ car.wltp_range }}></p>
+    <p>Cost : <input type="number" name="cost" value={{ car.cost }}></p>
+    <p>Power : <input type="number" name="power" value={{ car.power }}></p>
+    <input type="submit" value="Update" name="button"/>
+    <input type="submit" value="Delete" name="button"/>
+</form>
+</fieldset>
