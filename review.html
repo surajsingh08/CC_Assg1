@@ -1,0 +1,30 @@
+<h1>Reviews</h1>
+{% if user %}
+<fieldset>
+    <form method="post" action="/review">
+        <p>
+            <select name="car">
+            <option value="" default>--Select car--</option>
+            {% for car in cars %}
+                <option value="{{ car.key.id() }}">{{ car.name }}</option>
+            {% endfor %}
+            </select>
+        </p>
+        <p>
+            <textarea maxlength="1000" name="review" required></textarea>
+        </p>
+        <p>
+            <input type="number" min="1" max="10" name="rating" required>
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+    </fieldset>
+{% endif %}
+{% for review in Car_reviews %}
+    <p>
+        <p><h3>{{ review.car_name }}</h3></p>
+        <p>Review : <br>{{ review.car_review }}</p>
+        <p>Rating : <br>{{ review.rating }}</p>
+        <p>By : <br>{{ review.user }}</p>
+    </p>
+{% endfor %}

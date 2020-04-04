@@ -9,6 +9,8 @@ from MainPage2 import Page2
 from search import *
 from Edit import Details
 from compare import Compare
+from review import Review
+from datetime import datetime
 
 JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
                                         extensions=["jinja2.ext.autoescape"],autoescape=True)
@@ -47,7 +49,8 @@ app = webapp2.WSGIApplication([
 ('/add', Page2),
 ('/search', Search),
 ('/details', Details),
-('/compare', Compare)
+('/compare', Compare),
+('/review', Review)
 
 
 ])
